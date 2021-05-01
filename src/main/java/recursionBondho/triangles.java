@@ -1,7 +1,10 @@
 package recursionBondho;
 
-public class triangles {
-    static int print_row(int ct, int num)
+
+public class triangles {   
+
+static int print_row(int ct, int num)
+
     {
         // base case
         if (num == 0)
