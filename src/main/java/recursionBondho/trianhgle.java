@@ -1,6 +1,6 @@
 package recursionBondho;
 
-public class trianhgle {
+public class triangles {
 
     static int print_row(int ct, int num)
     {
