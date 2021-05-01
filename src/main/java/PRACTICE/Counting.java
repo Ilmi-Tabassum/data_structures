@@ -2,7 +2,7 @@
 package PRACTICE;
 import java.util.Arrays;
 
-class Counting {
+class CountingSort {
     public void count(int array[], int size) {
         int[] output = new int[size + 1];
 
