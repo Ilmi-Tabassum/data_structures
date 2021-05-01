@@ -1,7 +1,7 @@
 package RecursionSorting;
 import java.util.Scanner;
 
-public class scan {
+public class BinarySearch {
 
         public static void main (String[]args){
 
