@@ -51,6 +51,7 @@ public class DummyList {
         return sum;
     }
 
+//Insertion Method
 public void insert(int e) {
 
 
