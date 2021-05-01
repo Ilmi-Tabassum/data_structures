@@ -12,20 +12,10 @@ public class TilingDemons {
                 // Solution1:
                 System.out.println(solution1(n));
 
-                // Alternative solution:
-                // System.out.println(solution2(n));
             }
         }
 
-        // Tile states 0...7 representations:
-        //
-        //  0: 0    1: 1    2: 0    3: 1
-        //     0       0       1       1
-        //     0       0       0       0
-        //
-        //  4: 0    5: 1    6: 0    7: 1
-        //     0       0       1       1
-        //     1       1       1       1
+
         private static int solution1(int n) {
             int[][] dp = new int[n + 1][1 << 3];
             dp[0][7] = 1;
@@ -36,16 +26,13 @@ public class TilingDemons {
 
                 dp[i][1] += dp[i - 1][6];
 
-                // State 2 doesn't contribute to the number of tilings
-                // dp[i][2] += dp[i-1][5];
+           
 
                 dp[i][3] += dp[i - 1][7];
                 dp[i][3] += dp[i - 1][4];
 
                 dp[i][4] += dp[i - 1][3];
 
-                // State 5 doesn't contribute to the number of tilings
-                // dp[i][5] += dp[i-1][2];
 
                 dp[i][6] += dp[i - 1][7];
                 dp[i][6] += dp[i - 1][1];
