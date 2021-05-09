@@ -4,21 +4,22 @@ public class milerRabin {
 
 
         public static int modular_exponentiation(int a, int b, int n) {
-            int r = 1;
-            int k = Integer.SIZE - Integer.numberOfLeadingZeros(b) - 1;
-            for (int i = 1 << k; i != 0; i >>= 1) {
-                r = (r * r) % n;
-                if ((b & i) != 0) {
-                    r = r * a % n;
+
+                if (b == 0)
+                    return a % n;
+                int ret = modular_exponentiation(a, b / 2, n);
+                ret = (ret *ret)%n;
+
+                if (n % 2 == 1) {
+                    ret = (ret * a) % n;
                 }
+                return ret;
             }
-            return r;
-        }
 //Checks if a is "witness" to composite of n
 
         public static boolean witness(int a, int n) { // Following the algorithm
             int t;
-            t = Integer.numberOfTrailingZeros(n - 1);
+            t = n - 1;
             int u;
             u = n - 1 >> t;
             int[] x = new int[t + 1];
@@ -48,7 +49,7 @@ public class milerRabin {
 // slogn is the complexity of this milerRabin test
         public static void main(String[] args) {
 
-            System.out.println(miller_rabin(30, 54));
+            System.out.println(miller_rabin(17, 54));
             System.out.println(witness(54, 30));
         }
 
